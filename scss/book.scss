@@ -1,0 +1,27 @@
+@import "./global";
+
+.primary-color {
+  color: $secondary-color;
+}
+
+.back-link {
+  display: block;
+  color: $primary-color;
+  background-color: $primary-color-invert;
+  border: solid 3px $primary-color;
+  text-decoration: none;
+  text-align: center;
+  max-width: 24rem;
+  padding: $xs-spacing;
+  font-size: $s-font;
+  margin: $xs-spacing auto;
+
+  &:hover {
+    background-color: $background-light;
+  }
+
+  &:disabled {
+    background-color: $primary-color-invert;
+    border: solid 3px $background-light;
+  }
+}

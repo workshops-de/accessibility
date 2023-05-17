@@ -1,0 +1,241 @@
+/* Colors */
+$primary-color: black;
+$primary-color-invert: white;
+$secondary-color: #114446;
+$background-light: #ffcb9a;
+$backgrond-light-secondary: #d1e8e2;
+
+/* Media breack points */
+$mobile: 480px;
+$tablet: 768px;
+
+/* Spacing */
+$xxs-spacing: 0.5rem;
+$xs-spacing: 1.5rem;
+$s-spacing: 3rem;
+$m-spacing: 5rem;
+
+/* Font sizes */
+$xs-font: 1.2rem;
+$s-font: 1.4rem;
+$m-font: 1.6rem;
+
+h1 {
+  font-size: $m-font;
+}
+
+h2 {
+  font-size: $s-font;
+}
+
+h3 {
+  font-size: $xs-font;
+}
+
+/* Empty space scheme */
+/* Components */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.skiplink {
+  position: absolute;
+  left: -100000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+main {
+  flex: 1 0 auto;
+  padding: $s-spacing $m-spacing;
+  background-image: url(../assets/background-main.svg); //https://app.heazy.studio
+}
+
+/* Style the header */
+header {
+  //border: $secondary-color;
+  padding: $xs-spacing;
+  vertical-align: middle;
+  //border-bottom-style: dashed;
+  //border-width: $xxs-spacing;
+
+  background-image: url(../assets/background-header.svg); //https://app.heazy.studio
+
+  nav {
+    grid-column: 1;
+    align-self: center;
+
+    .crumbs ol {
+      list-style-type: none;
+    }
+
+    .crumb {
+      display: inline-block;
+      padding: $xxs-spacing $xs-spacing;
+    }
+
+    .crumb a {
+      font-size: $xs-font;
+      font-weight: bold;
+      color: $primary-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.logo {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column: 2;
+}
+
+header .logo img {
+  grid-column: 1;
+  max-width: $m-spacing;
+  min-width: $s-spacing;
+  align-self: center;
+  justify-self: end;
+  text-align: right;
+  padding-right: $xs-spacing;
+}
+header .logo h1 {
+  grid-column: 2;
+  align-self: center;
+  justify-self: end;
+  text-align: right;
+}
+
+.secondary-color {
+  color: $secondary-color;
+}
+
+//TODO remove or use it
+::-webkit-file-upload-button {
+  background-color: $primary-color;
+  color: white;
+  padding: 0.8rem;
+  border-style: none;
+}
+
+//TODO remove or use it
+::-ms-browse {
+  background-color: $primary-color;
+  color: white;
+  padding: 0.8rem;
+  border-style: none;
+}
+
+//TODO remove or use it
+::file-selector-button {
+  background-color: $primary-color;
+  color: white;
+  padding: 0.8rem;
+  border-style: none;
+}
+
+/* Style the footer */
+footer {
+  color: $primary-color-invert;
+  flex-shrink: 0;
+  background-color: $secondary-color;
+  font-size: 0.8rem;
+  grid-row: 3;
+
+  a {
+    color: $primary-color-invert;
+  }
+}
+
+footer .footer__imprint {
+  padding: $xs-spacing;
+}
+
+footer .footer__links {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 0.8rem;
+  justify-content: center;
+
+  a {
+    justify-self: center;
+  }
+}
+
+footer .footer__imprint .footer__right {
+  text-align: right;
+  margin: 0;
+}
+footer .footer--icon {
+  width: 2rem;
+  fill: $primary-color-invert;
+}
+
+header,
+main,
+footer {
+  flex-shrink: 0;
+}
+
+/* Responsive design */
+@media screen and (max-width: $tablet) {
+  main {
+    padding: $xxs-spacing $xs-spacing;
+  }
+
+  ol {
+    padding-inline-start: 0;
+  }
+
+  footer .footer__links {
+    margin-bottom: $xs-spacing;
+  }
+}
+
+/* tablet breakpoint */
+@media (min-width: $tablet) {
+  header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  footer .footer__imprint {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
+  footer .footer__imprint .footer__links {
+    grid-column: 1;
+  }
+
+  footer .footer__imprint .footer__right {
+    grid-column: 2;
+  }
+
+  footer .footer__links {
+    justify-content: left;
+  }
+}
+
+/*# sourceMappingURL=global.css.map */
